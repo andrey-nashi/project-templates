@@ -1,0 +1,49 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath "org.springframework.boot:spring-boot-gradle-plugin:2.1.4.RELEASE"
+    }
+
+}
+
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+
+group 'hivequeen'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+bootJar {
+    baseName = 'gs-spring-boot'
+    version =  '0.1.0'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '2.1.3.RELEASE'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa', version: '2.1.4.RELEASE'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-thymeleaf'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-security'
+    compile group: 'org.webjars', name: 'bootstrap', version: '3.3.6'
+    compile group: 'com.h2database', name: 'h2', version: '1.4.197'
+    compile group: 'com.squareup.moshi', name: 'moshi', version: '1.8.0'
+    compile group: 'org.hsqldb', name: 'hsqldb', version: '2.4.1'
+    compile group: 'io.jsonwebtoken', name: 'jjwt', version: '0.9.0'
+    compileOnly 'org.projectlombok:lombok:1.18.6'
+
+    compile group: 'com.querydsl', name: 'querydsl-jpa', version: '4.2.1'
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
