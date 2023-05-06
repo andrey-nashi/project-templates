@@ -1,0 +1,8 @@
+Django==4.0.6
+mysqlclient==2.1.0
+djangorestframework==3.13.1
+django-cors-headers==3.13.0
+django-mysql==4.7.0
+#celery
+#redis
+pymysql

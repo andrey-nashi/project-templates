@@ -1,0 +1,26 @@
+version: "3.3"
+
+services:
+
+  # ----------------------------------------
+
+  file_server_django:
+    image: file_server_django
+    container_name: file_server_django
+    build:
+      context: ..
+      dockerfile: ./docker/server/Dockerfile
+    command: bash -c "cd ./server && python3 manage.py runserver 0.0.0.0:8000"
+    env_file:
+    - ./fs-deploy.env
+    volumes:
+    - ./static/db.sqlite3:/app/server/db.sqlite3
+    - ./static/image:/app/static/image
+    ports:
+      - "8000:8000"
+    expose:
+      - 8000
+
+networks:
+  file_server_network:
+

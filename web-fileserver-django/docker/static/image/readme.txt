@@ -1,0 +1,1 @@
+This location is to store files on the server.
